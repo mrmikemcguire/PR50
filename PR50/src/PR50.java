@@ -14,10 +14,12 @@ class PR50
 	          String numbers = file.nextLine();
 	          String[] numbersArray = numbers.split(" ");
 	          ArrayList<Integer> occuranceCount = new ArrayList<Integer>();
+
 	          int modeCounter = 0;
 	          int highestModeCounter = 0;
 	          int max = 0; 
 	          int isHighestMode = 1;
+	          
 	          for(int t = 0; t < numbersArray.length; t++)
 	              {
 	              for(int j = t + 1; j < numbersArray.length; j++)
@@ -26,12 +28,14 @@ class PR50
 	                      {
 	                      isHighestMode += 1;
 	                      numbersArray[j] = "101";
+	                      System.out.println("numbersArray[t]: " + numbersArray[t]);
 	                      }
 	                  }
 	              occuranceCount.add(isHighestMode);
 	              isHighestMode = 1;
 	              }
-	          System.out.println(occuranceCount.size());
+	          
+	          System.out.println("AL size: " + occuranceCount.size());
 	            
 	          for(int c = 0; c < occuranceCount.size(); c++)
 	              {
@@ -48,9 +52,9 @@ class PR50
 	                  modeCounter += 1;
 	                  }
 	              }
-	          System.out.println(occuranceCount.size());
+	          	          
+	          System.out.println("ModeCounter: " + modeCounter);
 	          
-	          System.out.println(modeCounter);
 	          if(modeCounter == 1 )
 	              {
 	              System.out.println("1 MODE");
@@ -59,7 +63,8 @@ class PR50
 	              {
 	              System.out.println(modeCounter + " MODES");
 	              }
-	            
+	          
+	          System.out.println();
 	          }   
 	   	}
 	}
